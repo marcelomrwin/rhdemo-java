@@ -202,4 +202,22 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.wildfly-swarm>2018.5.0</version.wildfly-swarm>
   </properties>
+  <profiles>
+    <profile>
+      <id>openshift</id>
+      <build>
+        <finalName>rhdemo</finalName>
+        <plugins>
+          <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.2.2</version>
+            <configuration>
+              <outputDirectory>deployments</outputDirectory>
+              <warName>ROOT</warName>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
